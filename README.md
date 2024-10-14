@@ -1,7 +1,7 @@
 <h1>SweetMapper</h1>
 <p>SweetMapper is a project designed to source, compile, and organize detailed marketing information about physical businesses and places using the Google Places API. The project automates the retrieval of important business data, including email addresses, phone numbers, physical addresses, and photos, and stores this information in organized databases. These databases can be useful for marketers looking to cold approach businesses or for job-seekers who want to apply to specific companies.</p>
 
-<h4>Features</h4>
+<h3>Features</h3>
 <ul>
   <li><b>Automated Business Data Collection:</b> Uses the Google Places API to source a list of physical businesses in specified geographic regions.</li>
   <li><b>Comprehensive Data Points:</b> Collects and compiles data such as business names, phone numbers, email addresses (if available), physical addresses, and images.</li>
