@@ -6,13 +6,13 @@ import time
 from .validation import StringValidation, BooleanValidation
 
 class Places:
-    def __init__(self, placeType, location, radius, region, language="en-UK", open_now=False):
+    def __init__(self, key, placeType, location, radius, region, language="en-UK", open_now=False):
 
-        #Get Configuration Data
-        program_path = os.path.abspath(__file__)
-        program_directory = os.path.dirname(program_path)
-        with open(f"{program_directory}\\config.json", 'r') as config:
-            self.config = json.load(config)
+        
+
+        #api key validation
+        if(StringValidation(key)): self.key = key
+        else: raise ValueError("key needs to be of type str")
 
         #placeType validation
         if(StringValidation(placeType)): self.placeType = placeType
@@ -80,10 +80,10 @@ class Places:
     """Configuration Commands"""
 
     #Version
-    def version(self): return f"{self.config["version"]}"
+    #def version(self): return f"{self.config["version"]}"
 
     #__str__ function
-    def __str__(self): return f"<{self.config["name"]}/{self.config["version"]}.object.Places>"
+    #def __str__(self): return f"<{self.config["name"]}/{self.config["version"]}.object.Places>"
 
 
     """Functionality"""
@@ -95,9 +95,8 @@ class Places:
         """
         print("Give Sweetmapper up to 60 seconds to retrieve data from Google's API")
 
-        #with open("key.txt", "r") as apiKey: key = apiKey.readline()
-
-        client = googlemaps.Client(key="AIzaSyCmWj7tdePc7CKhALMdWEh37A9Xq0nHS9M")
+     
+        client = googlemaps.Client(key=self.key)
 
         df = pd.DataFrame({
             "name": [],
@@ -191,7 +190,7 @@ class Places:
 
         #with open("key.txt", "r") as apiKey: key = apiKey.readline()
 
-        client = googlemaps.Client(key="AIzaSyCmWj7tdePc7CKhALMdWEh37A9Xq0nHS9M")    
+        client = googlemaps.Client(key=self.key)    
 
         nameList = []
 
@@ -252,7 +251,7 @@ class Places:
 
         #with open("key.txt", "r") as apiKey: key = apiKey.readline()
 
-        client = googlemaps.Client(key="AIzaSyCmWj7tdePc7CKhALMdWEh37A9Xq0nHS9M")     
+        client = googlemaps.Client(key=self.key)     
 
         for x in listofids:
 
