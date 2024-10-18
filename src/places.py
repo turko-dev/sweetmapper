@@ -104,7 +104,7 @@ class Places:
             "address": []
         })
 
-        time.sleep(5)
+        time.sleep(2)
 
         pageSearch = client.places(self.placeType, 
                                     location=self.location, 
@@ -139,7 +139,7 @@ class Places:
 
                 else:
 
-                    time.sleep(5)
+                    time.sleep(2)
 
                     searchAgain = client.places(self.placeType, 
                                     location=self.location, 
