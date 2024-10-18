@@ -2,19 +2,24 @@ import os
 from colorama import Fore
 from src.places import Places
 
+version = "1.1"
 cliMenu = """1 - Configure Search
 2 - Paste Results
 3 - Exit"""
 
 os.system("clear")
-print(Fore.RED + "Enter Google Maps API Key")
+print(Fore.RED + "Enter Google Maps API Key (Must be 39 characters)")
 key = input(Fore.WHITE + "> ").strip()
+if(len(key) != 39):
+    print("API Key must be 39 characters exactly")
+    exit()
+
 fulfilled = False
 
 
 while True:
     os.system("clear")
-    print(Fore.RED + "Welcome to SweetMapper")
+    print(Fore.RED + "Welcome to SweetMapper " + version)
 
     print(Fore.WHITE + cliMenu)
     cliInput = input("> ")
