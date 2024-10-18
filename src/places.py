@@ -7,9 +7,6 @@ from .validation import StringValidation, BooleanValidation
 
 class Places:
     def __init__(self, key, placeType, location, radius, region, language="en-UK", open_now=False):
-
-        
-
         #api key validation
         if(StringValidation(key)): self.key = key
         else: raise ValueError("key needs to be of type str")

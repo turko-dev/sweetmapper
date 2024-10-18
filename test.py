@@ -1,6 +1,6 @@
 from src.places import Places
 
-key = "AIzaSyB4Z5LQHPAyuTdYUyVyZY0Ki7PyXs5kCC8"
+key = ""
 
 #Place your key here
 test = Places(key, "architecture firm manchester", "manchester", "20", "UK", "en-UK", open_now=False)

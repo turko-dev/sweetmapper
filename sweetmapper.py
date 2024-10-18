@@ -2,6 +2,7 @@ import os
 from colorama import Fore
 from src.places import Places
 
+pythonversion = "Python 3.10.12"
 version = "1.1"
 cliMenu = """1 - Configure Search
 2 - Paste Results
@@ -13,9 +14,7 @@ key = input(Fore.WHITE + "> ").strip()
 if(len(key) != 39):
     print("API Key must be 39 characters exactly")
     exit()
-
 fulfilled = False
-
 
 while True:
     os.system("clear")
