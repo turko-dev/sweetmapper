@@ -279,7 +279,7 @@ class Places:
 
             print("===================================")
 pythonversion = "Python 3.10.12"
-version = "1.1"
+version = "1.2"
 cliMenu = """1 - Configure Search
 2 - Paste Results
 3 - Exit"""
