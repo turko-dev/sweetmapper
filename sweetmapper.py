@@ -1,7 +1,7 @@
+
 import os
 from colorama import Fore
 import googlemaps
-import json
 import pandas as pd
 import os
 import time
@@ -258,12 +258,12 @@ class Places:
         #with open("key.txt", "r") as apiKey: key = apiKey.readline()
 
         client = googlemaps.Client(key=self.key)     
-
+        count = 0
         for x in listofids:
-
+            count = count + 1
             placeSearch = client.place(x)
-
-            time.sleep(1.5)
+            time.sleep(1)
+            print(f"{count} -=================================")
 
             if "name" in placeSearch["result"]: print(placeSearch["result"]["name"])
             else: print("No Name Available")
@@ -277,12 +277,12 @@ class Places:
             if "website" in placeSearch["result"]: print(placeSearch["result"]["website"])
             else: print("No Website Available")
 
-            print("===================================")
 pythonversion = "Python 3.10.12"
 version = "1.2"
 cliMenu = """1 - Configure Search
-2 - Paste Results
-3 - Exit"""
+2 - Paste Results to CSV
+3 - Print Results to Screen
+4 - Exit"""
 
 os.system("clear")
 print(Fore.RED + "Enter Google Maps API Key (Must be 39 characters)")
@@ -331,8 +331,14 @@ while True:
             else:
                 print(Fore.RED + "Please Fulfill Configure Search First")
                 l = input(Fore.WHITE + "Press Enter To Go Back > ")
-
         case "3":
+            if(fulfilled):
+
+                plsr = Places(key, f"{placeType} {location}", location, radius, country, language, open_now=open_now)
+                df = plsr.areaSearch()
+                plsr.printPlaces(plsr.getPlaceIds(df))
+                print("===================================")
+        case "4":
             break
 
 
