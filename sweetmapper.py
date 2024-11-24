@@ -4,15 +4,12 @@ import googlemaps
 import pandas as pd
 import time
 
+
 #Add Cities in here
-cities = {
-    "manchester": [53.4808, -2.2426]
-    
-}
+cities = {}
 placeType = "Coffee Shops"
 radius = 20
 language = "en-UK"
-filename = "lol"
 
 def sweetmap(mode, key, placeType, location, radius, language, filename):
     
@@ -114,11 +111,12 @@ def sweetmap(mode, key, placeType, location, radius, language, filename):
 
 
 pythonversion = "Python 3.10.12"
-version = "1.2"
+version = "2.0"
 cliMenu = """1 - Configure Search
 2 - Paste Results to CSV
 3 - Print Results to Screen
-4 - Exit"""
+4 - Do Both
+5 - Exit"""
 
 import maskpass
 os.system("clear")
@@ -130,7 +128,7 @@ if(len(key) != 39):
 fulfilled = False
 
 while True:
-    #os.system("clear")
+    os.system("clear")
     print(Fore.RED + "Welcome to SweetMapper " + version)
 
     print(Fore.WHITE + cliMenu)
@@ -139,25 +137,25 @@ while True:
     
     match cliInput:
         case "1":
-            #os.system("clear")
+            os.system("clear")
             print("Enter Place Search (e.g. Restaurant)")
             placeType = input("> ")
-            #os.system("clear")
+            os.system("clear")
             print("Enter City (Press ENTER to enter your own Lat:Lng values)")
             loc = str(input("> ").lower().strip())
             if(loc == ""):
                 print("Enter Latitudinal Value (e.g. -33.8599358)")
                 lat = float(input("> "))
-                #os.system("clear")
+                os.system("clear")
                 print("Enter Longitudinal Value (e.g. 151.2090295)")
                 lng = float(input("> "))
-            #os.system("clear")
+            os.system("clear")
             print("Enter Radius (e.g. 20)")
             radius = input("> ")
-            #os.system("clear")
+            os.system("clear")
             print("Enter Country (e.g. UK)")
             country = input("> ")
-            #os.system("clear")
+            os.system("clear")
             print("Enter Language (e.g. en-UK)")
             language = input("> ")
             fulfilled = True
@@ -176,16 +174,19 @@ while True:
                 l = input(Fore.WHITE + "Press Enter To Go Back > ")
         case "3":
             if(fulfilled):
-                if(loc != ""):
-                    sweetmap("print", key=key, placeType=placeType, location=loc, radius=radius, language=language, filename=filename)
-                else:
-                    sweetmap("print", key=key, placeType=placeType, location={"lat": lat, "lng": lng}, radius=radius, language=language, filename=filename)
-                print("===================================")
-
+                print("Gathering your results... Give Sweetmapper approximately 30 seconds to complete this")
+                if(loc != ""): sweetmap("print", key=key, placeType=placeType, location=loc, radius=radius, language=language, filename=filename)
+                else: sweetmap("print", key=key, placeType=placeType, location={"lat": lat, "lng": lng}, radius=radius, language=language, filename=filename)
             else:
                 print(Fore.RED + "Please Fulfill Configure Search First")
                 l = input(Fore.WHITE + "Press Enter To Go Back > ")
         case "4":
-            break
-
-
+            if(fulfilled):
+                print("Gathering your results... Give Sweetmapper approximately 30 seconds to complete this")
+                if(loc != ""): sweetmap("both", key=key, placeType=placeType, location=loc, radius=radius, language=language, filename=filename)
+                else: sweetmap("both", key=key, placeType=placeType, location={"lat": lat, "lng": lng}, radius=radius, language=language, filename=filename)
+            else:
+                print(Fore.RED + "Please Fulfill Configure Search First")
+                l = input(Fore.WHITE + "Press Enter To Go Back > ")
+        case "5":
+            exit()
