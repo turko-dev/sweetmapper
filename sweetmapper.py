@@ -2,7 +2,6 @@ import os
 from colorama import Fore
 import googlemaps
 import pandas as pd
-import os
 import time
 
 #Add Cities in here
@@ -12,10 +11,10 @@ cities = {
 }
 placeType = "Coffee Shops"
 radius = 20
-
 language = "en-UK"
 filename = "lol"
-def areaSearch(mode, key, placeType, location, radius, language, filename):
+
+def sweetmap(mode, key, placeType, location, radius, language, filename):
     
     if(isinstance(location, dict)):
         pass
@@ -168,9 +167,9 @@ while True:
                 print("File Name (e.g \"sweetmap\")")
                 filename = input("> ")
                 if(loc != ""):
-                    areaSearch("csv", key=key, placeType=placeType, location=loc, radius=radius, language=language, filename=filename)
+                    sweetmap("csv", key=key, placeType=placeType, location=loc, radius=radius, language=language, filename=filename)
                 else:
-                    areaSearch("csv", key=key, placeType=placeType, location={"lat": lat, "lng": lng}, radius=radius, language=language, filename=filename)
+                    sweetmap("csv", key=key, placeType=placeType, location={"lat": lat, "lng": lng}, radius=radius, language=language, filename=filename)
 
             else:
                 print(Fore.RED + "Please Fulfill Configure Search First")
@@ -178,9 +177,9 @@ while True:
         case "3":
             if(fulfilled):
                 if(loc != ""):
-                    areaSearch("print", key=key, placeType=placeType, location=loc, radius=radius, language=language, filename=filename)
+                    sweetmap("print", key=key, placeType=placeType, location=loc, radius=radius, language=language, filename=filename)
                 else:
-                    areaSearch("print", key=key, placeType=placeType, location={"lat": lat, "lng": lng}, radius=radius, language=language, filename=filename)
+                    sweetmap("print", key=key, placeType=placeType, location={"lat": lat, "lng": lng}, radius=radius, language=language, filename=filename)
                 print("===================================")
 
             else:
