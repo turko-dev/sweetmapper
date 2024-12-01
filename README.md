@@ -3,7 +3,11 @@
 <p><b>Important Note: </b>As of now SweetMapper is only available for Linux Devices however, a Windows/Mac release is on the way.</p>
 
 <h2>Installation</h2>
-...
+Sweetmapper is a single-script application which means that all the functionality is contained within a single .py file. The way you install Sweetmapper is by cloning the repository from this page and running python3 before the sweetmapper.py file.
+
+```console
+python3 sweetmapper.py
+```
 
 <h2>Documentation</h2>
 ...
