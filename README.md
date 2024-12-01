@@ -20,9 +20,22 @@ python3 sweetmapper.py
 
 <h2>Documentation</h2>
 
+To access Sweetmapper, you must first issue an API Key from Google to use their API's. There is a free usage credit assigned to each Google Account per month and Sweetmapper will not use many credits regardless. However, if you wish to use Sweetmapper often, you may also have to pay Google a cut to use in large amounts.
+
 ```console
 Enter Google Maps API Key (Must be 39 characters)
 > ***************************************
 ```
+You must first configure your search before searching for anything and can be done by pressing Option 1 (Configure Search)
+
+```console
+Welcome to Sweetmapper 2.0
+1 - Configure Search
+2 - Paste Results to CSV
+3 - Print Results to Screen
+4 - Do Both
+5 - Exit
+```
+
 
 
