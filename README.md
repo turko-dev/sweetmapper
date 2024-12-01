@@ -1,4 +1,4 @@
-<h1>SweetMapper 2.0</h1>
+<h1>SweetMapper 2.1</h1>
 <p>SweetMapper is a project designed to source, compile, and organize detailed marketing information about physical businesses and places using the Google Places API. The project automates the retrieval of important business data, including email addresses, phone numbers, physical addresses, and photos, and stores this information in organized databases. These databases can be useful for marketers looking to cold approach businesses or for job-seekers who want to apply to specific companies.</p>
 <p><b>Important Note: </b>As of now SweetMapper is only available for Linux Devices however, a Windows/Mac release is on the way.</p>
 
