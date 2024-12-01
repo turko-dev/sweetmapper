@@ -9,9 +9,6 @@ Sweetmapper is a single-script application which means that all the functionalit
 python3 sweetmapper.py
 ```
 
-<h2>Documentation</h2>
-...
-
 <h2>Features</h2>
 <ul>
   <li><b>Automated Business Data Collection:</b> Uses the Google Places API to source a list of physical businesses in specified geographic regions.</li>
@@ -20,3 +17,12 @@ python3 sweetmapper.py
   <li><b>Flexible Use Cases:</b> Designed for both marketers seeking business leads for cold outreach and job-seekers looking for potential companies to apply to.</li>
   <li><b>Customizable Queries:</b> Allows users to specify location and business type to focus searches based on their needs.</li>
 </ul>
+
+<h2>Documentation</h2>
+
+```console
+Enter Google Maps API Key (Must be 39 characters)
+> ***************************************
+```
+
+
