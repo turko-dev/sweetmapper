@@ -5,6 +5,8 @@
 <h2>Installation</h2>
 Sweetmapper is a single-script application which means that all the functionality is contained within a single .py file. The way you install Sweetmapper is by cloning the repository from this page and running python3 before the sweetmapper.py file.
 
+<h4>Run the file</h4>
+
 ```console
 python3 sweetmapper.py
 ```
